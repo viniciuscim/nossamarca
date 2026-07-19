@@ -207,17 +207,21 @@
   .nota-fundadores p{color:var(--cinza-grafite);margin-bottom:14px;font-size:16.5px;}
   .nota-fundadores p:last-child{margin-bottom:0;}
   .nota-fundadores b{color:var(--preto);font-weight:600;}
-  .duo{display:grid;grid-template-columns:1fr;gap:40px;}
+  .duo{display:grid;grid-template-columns:1fr;gap:32px;}
   @media(min-width:680px){.duo{grid-template-columns:1fr 1fr;gap:48px;}}
-  .pessoa{border-top:1px solid var(--preto);padding-top:24px;}
+  .pessoa{
+    border-top:1px solid var(--preto);padding-top:24px;
+    display:grid;grid-template-columns:104px 1fr;gap:20px;align-items:start;
+  }
+  @media(min-width:680px){.pessoa{grid-template-columns:128px 1fr;gap:24px;}}
   .pessoa img{
     width:100%;aspect-ratio:4/5;object-fit:cover;display:block;
-    background:var(--cinza-claro);margin-bottom:22px;
+    background:var(--cinza-claro);
     border:1px solid var(--cinza-galeria);
   }
   .pessoa h3{
     font-family:var(--display);font-weight:600;text-transform:uppercase;
-    font-size:clamp(26px,4vw,38px);line-height:1;margin-bottom:6px;
+    font-size:clamp(22px,3vw,28px);line-height:1;margin-bottom:6px;
   }
   .pessoa .cargo{
     font-size:11px;letter-spacing:0.14em;text-transform:uppercase;
@@ -350,15 +354,19 @@
     <div class="duo">
       <div class="pessoa">
         <img src="studiomeeve-mila.webp" alt="Mila, cofundadora e diretora de curadoria sensorial da Studio Meeve" loading="lazy">
-        <h3>Mila</h3>
-        <div class="cargo">Diretora de Curadoria Sensorial</div>
-        <p>dá corpo e história a cada fragrância: da escolha das notas ao conceito que a acompanha, do primeiro teste à assinatura final.</p>
+        <div>
+          <h3>Mila</h3>
+          <div class="cargo">Diretora de Curadoria Sensorial</div>
+          <p>dá corpo e história a cada fragrância: da escolha das notas ao conceito que a acompanha, do primeiro teste à assinatura final.</p>
+        </div>
       </div>
       <div class="pessoa">
         <img src="studiomeeve-vinicius.webp" alt="Vinícius, cofundador e diretor criativo da Studio Meeve" loading="lazy">
-        <h3>Vinícius</h3>
-        <div class="cargo">Diretor Criativo</div>
-        <p>assina a identidade, as campanhas e o desenho de cada peça como parte de uma mesma galeria. do rótulo à fotografia, tudo passa pelo mesmo olhar.</p>
+        <div>
+          <h3>Vinícius</h3>
+          <div class="cargo">Diretor Criativo</div>
+          <p>assina a identidade, as campanhas e o desenho de cada peça como parte de uma mesma galeria. do rótulo à fotografia, tudo passa pelo mesmo olhar.</p>
+        </div>
       </div>
     </div>
   </div>
