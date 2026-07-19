@@ -1,0 +1,431 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Nossa marca — Studio Meeve</title>
+<meta name="description" content="A meeve nasceu da arte. Perfumaria de nicho para interiores fundada em São Paulo. Aromas autorais concebidos como obras para o espaço.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Barlow+Semi+Condensed:wght@500;600;700&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --preto:#1A1A1A;
+    --branco:#FFFFFF;
+    --branco-frio:#FAFAF8;
+    --cinza-claro:#EFEFED;
+    --cinza-galeria:#E6E6E3;
+    --cinza-mineral:#D8D8D5;
+    --cinza-medio:#9C9C98;
+    --cinza-grafite:#5F5F5B;
+    --vermelho:#A92A31;
+    --display:'Bahnschrift', 'Barlow Semi Condensed', sans-serif;
+    --texto:'Inter', sans-serif;
+  }
+  *{margin:0;padding:0;box-sizing:border-box;}
+  html{scroll-behavior:smooth;}
+  body{
+    font-family:var(--texto);
+    background:var(--branco);
+    color:var(--preto);
+    font-size:16px;
+    line-height:1.65;
+    -webkit-font-smoothing:antialiased;
+  }
+  .wrap{max-width:1100px;margin:0 auto;padding:0 24px;}
+  @media(min-width:768px){.wrap{padding:0 48px;}}
+
+  /* ---------- micro index / header ---------- */
+  header.topo{
+    border-bottom:1px solid var(--cinza-galeria);
+    padding:18px 0;
+  }
+  .index-line{
+    display:flex;justify-content:space-between;align-items:baseline;
+    font-size:11px;letter-spacing:0.14em;text-transform:uppercase;
+    color:var(--preto);font-weight:500;
+  }
+  .index-line .red{color:var(--vermelho);}
+
+  /* ---------- hero ---------- */
+  .hero{padding:72px 0 64px;}
+  @media(min-width:768px){.hero{padding:120px 0 96px;}}
+  .eyebrow{
+    font-size:11px;letter-spacing:0.16em;text-transform:uppercase;
+    font-weight:600;color:var(--cinza-grafite);margin-bottom:20px;
+    display:flex;align-items:center;gap:10px;
+  }
+  .eyebrow::before{
+    content:"";display:inline-block;width:22px;height:2px;background:var(--vermelho);
+  }
+  h1{
+    font-family:var(--display);font-weight:600;text-transform:uppercase;
+    font-size:clamp(48px,9vw,116px);line-height:0.92;letter-spacing:0;
+    max-width:13ch;
+  }
+  .hero p{
+    max-width:52ch;margin-top:32px;color:var(--cinza-grafite);
+    font-size:17px;
+  }
+  @media(min-width:768px){
+    .hero p{margin-left:32%;}
+  }
+
+  /* ---------- index strip ---------- */
+  .strip{
+    border-top:1px solid var(--preto);
+    border-bottom:1px solid var(--cinza-galeria);
+  }
+  .strip .wrap{
+    display:grid;grid-template-columns:1fr;gap:0;
+  }
+  @media(min-width:640px){.strip .wrap{grid-template-columns:repeat(3,1fr);}}
+  .strip a{
+    text-decoration:none;color:var(--preto);
+    padding:22px 0;display:flex;align-items:baseline;gap:14px;
+    border-bottom:1px solid var(--cinza-galeria);
+    transition:padding-left .25s ease;
+  }
+  @media(min-width:640px){
+    .strip a{border-bottom:none;border-right:1px solid var(--cinza-galeria);padding:26px 24px 26px 0;}
+    .strip a:last-child{border-right:none;}
+    .strip a:not(:first-child){padding-left:24px;}
+  }
+  .strip a:hover{padding-left:8px;}
+  @media(min-width:640px){.strip a:hover{padding-left:6px;} .strip a:first-child:hover{padding-left:6px;}}
+  .strip .num{
+    font-family:var(--display);font-weight:600;font-size:20px;color:var(--vermelho);
+  }
+  .strip .nome{
+    font-family:var(--display);font-weight:600;text-transform:uppercase;
+    font-size:22px;letter-spacing:0.02em;
+  }
+  .strip .sistema{
+    font-size:11px;letter-spacing:0.12em;text-transform:uppercase;color:var(--cinza-medio);
+    margin-left:auto;font-weight:500;
+  }
+
+  /* ---------- manifesto (banda escura) ---------- */
+  .manifesto{padding:96px 0;background:var(--preto);color:var(--branco);}
+  @media(min-width:768px){.manifesto{padding:140px 0;}}
+  .manifesto .eyebrow{color:var(--cinza-medio);}
+  .manifesto-lead{
+    font-family:var(--display);font-weight:600;text-transform:uppercase;
+    font-size:clamp(28px,5vw,52px);line-height:1.02;
+    max-width:24ch;margin-bottom:56px;
+  }
+  .manifesto-cols{display:grid;grid-template-columns:1fr;gap:0;}
+  @media(min-width:768px){
+    .manifesto-cols{grid-template-columns:5fr 7fr;gap:72px;}
+  }
+  .manifesto-cols .marcador{
+    font-family:var(--display);font-weight:600;font-size:clamp(40px,6vw,64px);
+    color:var(--vermelho);line-height:1;margin-bottom:32px;
+  }
+  .manifesto-cols p{
+    color:var(--cinza-mineral);max-width:56ch;margin-bottom:22px;font-size:16.5px;
+  }
+  .manifesto-cols p b{color:var(--branco);font-weight:600;}
+  .manifesto-fecho{
+    margin-top:72px;padding-top:48px;border-top:1px solid #3A3A38;
+    font-family:var(--display);font-weight:600;text-transform:uppercase;
+    font-size:clamp(26px,4.5vw,44px);line-height:1.05;max-width:26ch;
+  }
+  .manifesto-fecho .red{color:var(--vermelho);}
+
+  /* ---------- seções claras ---------- */
+  section.bloco{padding:88px 0;}
+  @media(min-width:768px){section.bloco{padding:128px 0;}}
+  section.bloco.alt{background:var(--branco-frio);}
+  .bloco-grid{display:grid;grid-template-columns:1fr;gap:48px;}
+  @media(min-width:860px){
+    .bloco-grid{grid-template-columns:5fr 6fr;gap:72px;align-items:start;}
+    .bloco-grid.invert{grid-template-columns:6fr 5fr;}
+    .bloco-grid.invert .fig{order:2;}
+    .bloco-grid.invert .txt{order:1;}
+  }
+  .bloco-head{display:flex;align-items:baseline;gap:16px;margin-bottom:8px;}
+  .bloco-num{
+    font-family:var(--display);font-weight:600;font-size:clamp(40px,6vw,64px);
+    color:var(--vermelho);line-height:1;
+  }
+  .bloco h2{
+    font-family:var(--display);font-weight:600;text-transform:uppercase;
+    font-size:clamp(34px,5.5vw,60px);line-height:0.95;letter-spacing:0;
+    margin-bottom:6px;
+  }
+  .bloco .contexto{
+    font-size:11px;letter-spacing:0.14em;text-transform:uppercase;
+    color:var(--cinza-grafite);font-weight:600;margin-bottom:28px;
+  }
+  .bloco .headline{
+    font-family:var(--display);font-weight:600;text-transform:uppercase;
+    font-size:clamp(20px,3vw,26px);letter-spacing:0.01em;line-height:1.15;
+    margin-bottom:20px;max-width:24ch;
+  }
+  .bloco p{color:var(--cinza-grafite);max-width:52ch;margin-bottom:16px;}
+  .bloco p strong{color:var(--preto);font-weight:600;}
+  .specs{
+    display:flex;flex-wrap:wrap;gap:8px;margin:28px 0 0;
+  }
+  .specs span{
+    font-size:11px;letter-spacing:0.1em;text-transform:uppercase;font-weight:500;
+    border:1px solid var(--cinza-mineral);padding:7px 12px;color:var(--preto);
+    background:var(--branco);
+  }
+  section.bloco.alt .specs span{background:var(--branco-frio);}
+  .nota{
+    margin-top:26px;padding-left:16px;border-left:2px solid var(--vermelho);
+    font-size:13.5px;color:var(--cinza-grafite);max-width:46ch;
+  }
+  .nota b{color:var(--preto);font-weight:600;}
+
+  /* figures */
+  .fig{
+    background:var(--cinza-claro);
+    position:relative;overflow:hidden;
+  }
+  section.bloco.alt .fig{background:var(--branco);}
+  @media(min-width:860px){.fig{position:sticky;top:32px;}}
+  .fig-foto{
+    width:100%;aspect-ratio:1/1;object-fit:cover;display:block;
+  }
+  .fig-foto.retrato{aspect-ratio:3/4;}
+
+  /* ---------- fundadores ---------- */
+  .fundadores{padding:88px 0;background:var(--branco-frio);}
+  @media(min-width:768px){.fundadores{padding:128px 0;}}
+  .fundadores h2{
+    font-family:var(--display);font-weight:600;text-transform:uppercase;
+    font-size:clamp(34px,5.5vw,60px);line-height:0.95;margin-bottom:20px;
+  }
+  .fundadores .intro{color:var(--cinza-grafite);max-width:52ch;margin-bottom:16px;}
+  .nota-fundadores{
+    margin:36px 0 64px;padding-left:18px;border-left:2px solid var(--vermelho);
+    max-width:56ch;
+  }
+  .nota-fundadores p{color:var(--cinza-grafite);margin-bottom:14px;font-size:16.5px;}
+  .nota-fundadores p:last-child{margin-bottom:0;}
+  .nota-fundadores b{color:var(--preto);font-weight:600;}
+  .duo{display:grid;grid-template-columns:1fr;gap:40px;}
+  @media(min-width:680px){.duo{grid-template-columns:1fr 1fr;gap:48px;}}
+  .pessoa{border-top:1px solid var(--preto);padding-top:24px;}
+  .pessoa img{
+    width:100%;aspect-ratio:4/5;object-fit:cover;display:block;
+    background:var(--cinza-claro);margin-bottom:22px;
+    border:1px solid var(--cinza-galeria);
+  }
+  .pessoa h3{
+    font-family:var(--display);font-weight:600;text-transform:uppercase;
+    font-size:clamp(26px,4vw,38px);line-height:1;margin-bottom:6px;
+  }
+  .pessoa .cargo{
+    font-size:11px;letter-spacing:0.14em;text-transform:uppercase;
+    color:var(--vermelho);font-weight:600;margin-bottom:16px;
+  }
+  .pessoa p{color:var(--cinza-grafite);max-width:44ch;}
+
+  /* ---------- fechamento ---------- */
+  .fecho{padding:96px 0;background:var(--cinza-claro);}
+  @media(min-width:768px){.fecho{padding:128px 0;}}
+  .fecho h2{
+    font-family:var(--display);font-weight:600;text-transform:uppercase;
+    font-size:clamp(34px,6vw,64px);line-height:0.95;max-width:16ch;margin-bottom:22px;
+  }
+  .fecho p{color:var(--cinza-grafite);max-width:46ch;margin-bottom:36px;}
+  .cta-row{display:flex;flex-wrap:wrap;gap:12px;align-items:center;}
+  .btn{
+    display:inline-block;text-decoration:none;
+    font-size:12px;letter-spacing:0.12em;text-transform:uppercase;font-weight:600;
+    padding:16px 28px;transition:opacity .2s ease, background .2s ease, color .2s ease;
+  }
+  .btn.solid{background:var(--preto);color:var(--branco);}
+  .btn.solid:hover{background:var(--vermelho);}
+  .btn.line{border:1px solid var(--preto);color:var(--preto);}
+  .btn.line:hover{background:var(--preto);color:var(--branco);}
+
+  footer{
+    padding:32px 0;border-top:1px solid var(--cinza-galeria);
+  }
+  footer .index-line{color:var(--cinza-medio);}
+  footer .index-line b{color:var(--preto);font-weight:600;}
+
+  @media(prefers-reduced-motion:reduce){
+    html{scroll-behavior:auto;}
+  }
+</style>
+</head>
+<body>
+
+<header class="topo">
+  <div class="wrap index-line">
+    <span><b style="color:var(--preto)">MEEVE</b> / INSTITUCIONAL <span class="red">01</span></span>
+    <span>NOSSA MARCA</span>
+  </div>
+</header>
+
+<!-- HERO -->
+<section class="hero">
+  <div class="wrap">
+    <div class="eyebrow">A scent art gallery</div>
+    <h1>a meeve nasceu da arte</h1>
+    <p>da arte que invade o ar, que se consome, que desaparece e mesmo assim permanece. somos uma perfumaria de nicho para interiores fundada em são paulo, em 2023. criamos aromas autorais concebidos como obras para o espaço.</p>
+  </div>
+</section>
+
+<!-- INDEX STRIP -->
+<nav class="strip" aria-label="Índice da página">
+  <div class="wrap">
+    <a href="#manifesto"><span class="num">01</span><span class="nome">Manifesto</span><span class="sistema">Ponto de vista</span></a>
+    <a href="#atelie"><span class="num">02</span><span class="nome">Ateliê</span><span class="sistema">Criação</span></a>
+    <a href="#fundadores"><span class="num">03</span><span class="nome">Fundadores</span><span class="sistema">Dois olhares</span></a>
+  </div>
+</nav>
+
+<!-- 01 MANIFESTO -->
+<section class="manifesto" id="manifesto">
+  <div class="wrap">
+    <div class="eyebrow">Manifesto</div>
+    <p class="manifesto-lead">Partimos da arte. O aroma é uma das formas que ela encontra para existir.</p>
+    <div class="manifesto-cols">
+      <div class="marcador" aria-hidden="true">01</div>
+      <div>
+        <p>cada peça é concebida como <b>obra visual, olfativa e sensorial</b>, feita para transformar o espaço em experiência. um aroma entra num ambiente e reorganiza tudo o que está nele: a luz parece outra, o silêncio ganha corpo, a sala inteira muda de temperamento.</p>
+        <p>o mercado de aromas padronizados repete os mesmos perfumes, os mesmos rótulos, os mesmos gestos decorativos. <b>rejeitamos essa lógica de catálogo.</b> preferimos o risco, o incômodo, a assinatura.</p>
+        <p>a meeve é crítica, porque a arte também é. autoral, porque o comum não nos serve. íntima, porque habitar um espaço é experiência pessoal e intransferível.</p>
+      </div>
+    </div>
+    <p class="manifesto-fecho">A arte pode, e deve, estar em cada detalhe da vida. <span class="red">Até no ar que você respira.</span></p>
+  </div>
+</section>
+
+<!-- 02 ATELIÊ -->
+<section class="bloco" id="atelie">
+  <div class="wrap bloco-grid">
+    <div class="fig">
+      <img class="fig-foto" src="https://d1a9qnv764bsoo.cloudfront.net/stores/003/946/250/rte/studiomeevecriacoes.jpg" alt="Processo de criação artesanal das peças Studio Meeve" loading="lazy">
+    </div>
+    <div class="txt">
+      <div class="bloco-head"><span class="bloco-num">02</span><h2>Ateliê</h2></div>
+      <div class="contexto">São Paulo · Lotes pequenos</div>
+      <p class="headline">Cada aroma nasce como uma obra</p>
+      <p>criamos composições autorais em <strong>lotes pequenos, feitos à mão</strong> no nosso ateliê. cada fragrância parte de um conceito, atravessa testes, estudos e ajustes até chegar ao equilíbrio que buscamos: profundo, memorável, fiel ao nosso universo.</p>
+      <p>a paleta olfativa é deliberadamente inusitada. <strong>bergamota encontra moscow mule. capim-limão encontra sal marinho. couro encontra cedro.</strong> buscamos combinações que provocam sem perder a sofisticação.</p>
+      <div class="specs">
+        <span>7 aromas autorais</span><span>3 formatos</span><span>Feito à mão</span>
+      </div>
+      <p class="nota"><b>curadoria, não acidente:</b> nenhum aroma entra na galeria por tendência. entra quando sustenta um conceito do primeiro teste à assinatura final.</p>
+    </div>
+  </div>
+</section>
+
+<!-- 02.1 MATÉRIA -->
+<section class="bloco alt" id="materia">
+  <div class="wrap bloco-grid invert">
+    <div class="fig">
+      <img class="fig-foto" src="https://d1a9qnv764bsoo.cloudfront.net/stores/003/946/250/rte/sustentabilidade.png" alt="Matérias-primas de origem vegetal utilizadas pela Studio Meeve" loading="lazy">
+    </div>
+    <div class="txt">
+      <div class="contexto">Integridade material</div>
+      <p class="headline">Matéria escolhida</p>
+      <p>estética e responsabilidade caminham juntas. todas as peças são <strong>veganas, cruelty free e não tóxicas</strong>, sem parabenos, ftalatos ou derivados de petróleo.</p>
+      <p>cera de origem vegetal na vela. fibra de algodão nas varetas do difusor. materiais recicláveis na embalagem. <strong>cada material entra por decisão, nunca por conveniência.</strong></p>
+      <div class="specs">
+        <span>Vegano</span><span>Cruelty free</span><span>Sem parabenos</span><span>Sem ftalatos</span><span>Origem vegetal</span><span>Embalagem reciclável</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- 03 FUNDADORES -->
+<section class="fundadores" id="fundadores">
+  <div class="wrap">
+    <div class="eyebrow">Fundadores</div>
+    <h2>Dois olhares, uma galeria</h2>
+    <div class="nota-fundadores">
+      <p>a gente cansou de ver a mesma vela em todo lugar. os mesmos perfumes, os mesmos rótulos, o mesmo gesto decorativo repetido de marca em marca. <b>a meeve nasceu para furar essa bolha.</b></p>
+      <p>criamos peças que dão personalidade a uma casa; o toque final de um espaço que tem dono. aromas pensados para produzir sensações novas, daquelas que dão vontade de voltar para casa no fim do dia.</p>
+      <p><b>queremos unir arte e aroma</b>, o visual e o olfativo, criando sensações que fazem você redescobrir o prazer de estar no seu próprio espaço.</p>
+    </div>
+    <div class="duo">
+      <div class="pessoa">
+        <img src="img/studiomeeve-mila.webp" alt="Mila, cofundadora e diretora de curadoria sensorial da Studio Meeve" loading="lazy">
+        <h3>Mila</h3>
+        <div class="cargo">Diretora de Curadoria Sensorial</div>
+        <p>dá corpo e história a cada fragrância: da escolha das notas ao conceito que a acompanha, do primeiro teste à assinatura final.</p>
+      </div>
+      <div class="pessoa">
+        <img src="img/studiomeeve-vinicius.webp" alt="Vinícius, cofundador e diretor criativo da Studio Meeve" loading="lazy">
+        <h3>Vinícius</h3>
+        <div class="cargo">Diretor Criativo</div>
+        <p>assina a identidade, as campanhas e o desenho de cada peça como parte de uma mesma galeria. do rótulo à fotografia, tudo passa pelo mesmo olhar.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- FECHAMENTO -->
+<section class="fecho">
+  <div class="wrap">
+    <h2>Agora, conheça as obras</h2>
+    <p>sete fragrâncias autorais, cada uma disponível em vela, difusor e home spray. se preferir um ponto de partida, três perguntas encontram a sua.</p>
+    <div class="cta-row">
+      <a class="btn solid" href="LINK_AROMAS">Ver os aromas</a>
+      <a class="btn line" href="LINK_SCENT_MATCH">Fazer o Scent Match</a>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <div class="wrap index-line">
+    <span><b>STUDIO MEEVE</b> · A SCENT ART GALLERY</span>
+    <span>SCENT IS OUR ART</span>
+  </div>
+</footer>
+
+<script>
+  /* Links da loja */
+  const LINKS = {
+    LINK_AROMAS:      "https://www.studiomeeve.com.br/aromas/",
+    LINK_SCENT_MATCH: "https://www.studiomeeve.com.br/scent-match/"
+  };
+  document.querySelectorAll("a[href]").forEach(a => {
+    const k = a.getAttribute("href");
+    if (LINKS[k]) { a.href = LINKS[k]; a.target = "_top"; }
+  });
+</script>
+
+<!-- ============================================
+     AUTO-RESIZE (avisa o parent/Nuvemshop da altura real)
+     Fonte da mensagem: "nossa-marca"
+     ============================================ -->
+<script>
+  (function() {
+    function enviaAltura() {
+      var altura = Math.max(
+        document.documentElement.scrollHeight,
+        document.body.scrollHeight
+      );
+      window.parent.postMessage(
+        { source: "nossa-marca", type: "meeve-resize", height: altura },
+        "*"
+      );
+    }
+
+    window.addEventListener("load", enviaAltura);
+
+    if (window.ResizeObserver) {
+      new ResizeObserver(enviaAltura).observe(document.body);
+    }
+
+    var tentativas = 0;
+    var intervalo = setInterval(function() {
+      enviaAltura();
+      tentativas++;
+      if (tentativas > 12) clearInterval(intervalo);
+    }, 300);
+  })();
+</script>
+
+</body>
+</html>
